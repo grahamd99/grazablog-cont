@@ -37,12 +37,12 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync _site s3://your-bucket-name \
+          aws s3 sync _site s3://privates3cloudfrontwebsitest-websitebucket75c24d94-lscgymyykqe8 \
             --delete \
             --cache-control "max-age=300"
 
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id E1234567890ABC \
+            --distribution-id E3BHR03G2O83EZ \
             --paths "/*"
